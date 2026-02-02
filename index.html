@@ -70,9 +70,6 @@
         #non {
             background: #E0E0E0;
             color: #666;
-            /* position: absolute;
-            left: 50%;
-            transform: translateX(-50%); */
         }
 
         .confetti {
@@ -81,7 +78,7 @@
             height: 10px;
             background: #FF1493;
             position: absolute;
-            animation: confetti-fall 3s linear forwards;
+            animation: confetti-fall 5s linear forwards;
         }
 
         @keyframes confetti-fall {
@@ -149,12 +146,10 @@
         const successMessage = document.getElementById('successMessage');
         const modal = document.querySelector('.modal');
 
-        // Fonction pour déplacer le bouton "Non"
         nonBtn.addEventListener('mouseover', function() {
             const container = document.querySelector('.buttons-container');
             const containerRect = container.getBoundingClientRect();
             
-            // Générer des positions aléatoires dans la fenêtre
             const maxX = window.innerWidth - 150;
             const maxY = window.innerHeight - 60;
             
@@ -167,7 +162,6 @@
             nonBtn.style.transform = 'none';
         });
 
-        // Fonction pour créer des confettis
         function createConfetti() {
             const colors = ['#FF1493', '#FF69B4', '#FFB6C1', '#FFC0CB', '#FF85C1', '#FFD700', '#FF6347'];
             const confettiCount = 100;
@@ -192,7 +186,6 @@
             }
         }
 
-        // Quand on clique sur "Oui"
         ouiBtn.addEventListener('click', function() {
             createConfetti();
             modal.style.display = 'none';
